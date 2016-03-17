@@ -39,14 +39,63 @@ namespace SweepstakesManagement
             CharArray = tempCharArray;
         }
 
+        //public void Remove(int startIndex, int numCharsToRemove)
+        //{
+        //    char[] tempCharArray = new char[CharArray.Length - numCharsToRemove];
+        //    char[] removedCharArray = new char[numCharsToRemove];
+        //    for (int i = 0; i < numCharsToRemove; i++)
+        //    {
+
+        //        removedCharArray[i] += CharArray[startIndex + i];
+                
+
+        //    }
+        //    for (int i = 0; i < tempCharArray.Length; i++)
+        //    {
+        //        tempCharArray[i] = CharArray[startIndex-i];
+        //    }
+            
+        //    foreach (char c in tempCharArray)
+        //    {
+        //        Console.Write(c);
+        //    }
+        //}
         public void Remove(int startIndex, int numCharsToRemove)
         {
             char[] tempCharArray = new char[CharArray.Length - numCharsToRemove];
-            for (int i = 0; i < numCharsToRemove; i++)
+            char[] removedCharArray = new char[numCharsToRemove];
+            for (int i = 0; i < tempCharArray.Length; i++)
             {
-                
+                for (int j = 0; j < numCharsToRemove; j++)
+                {
+                    removedCharArray[j] += CharArray[startIndex + j];
+
+                    if (CharArray[i] != removedCharArray[j])
+                    {
+                        tempCharArray[i] = CharArray[j];
+                    }
+                    
+                }
             }
+            foreach (char c in removedCharArray)
+            {
+                Console.Write(c);
+            }
+            CharArray = tempCharArray;
         }
+
+        public void Remove2(int startIndex, int numCharsToRemove)
+        {
+            for (int i = 0; i <= numCharsToRemove; i++)
+            {
+                for (int a = startIndex + i; a < CharArray.Length - numCharsToRemove; a++)
+                {
+                    CharArray[a] = CharArray[a + numCharsToRemove];
+                }
+            }
+            Array.Resize(ref CharArray, CharArray.Length - numCharsToRemove);
+        }
+
 
         public int Lenght()
         {

@@ -40,6 +40,13 @@ namespace SweepstakesManagement
             {
                 Console.Write(s);
             }
+            Console.WriteLine();
+            systemArrayString.Remove2(2,1);
+            foreach (char s in CharArray)
+            {
+                Console.Write(s);
+            }
+            Console.WriteLine();
 
 
 
