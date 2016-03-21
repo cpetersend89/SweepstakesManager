@@ -9,7 +9,7 @@ namespace SweepstakesManagement
 {
     class FileWriter
     {
-        private string _fileName;
+        private readonly string _fileName;
 
         public FileWriter(string fileName)
         {

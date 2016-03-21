@@ -61,6 +61,7 @@
     <Compile Include="SystemArrayString.cs" />
     <Compile Include="SystemLinkedListString.cs" />
     <Compile Include="SystemString.cs" />
+    <Compile Include="Tools.cs" />
     <Compile Include="UserInput.cs" />
   </ItemGroup>
   <ItemGroup>

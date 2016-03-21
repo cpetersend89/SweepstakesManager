@@ -8,8 +8,8 @@ namespace SweepstakesManagement
 {
     class Contestant
     {
-        private string _name;
-        private string _phonenumber;
+        private readonly string _name;
+        private readonly string _phonenumber;
 
         public Contestant(string name, string phonenumber)
         {

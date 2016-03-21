@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
@@ -15,41 +16,51 @@ namespace SweepstakesManagement
         static void Main(string[] args)
         {
 
-            SystemString systemString = new SystemString();
-            EmptyString = "This is a string";
-            systemString.ToString();
-            Console.WriteLine(EmptyString);
-            systemString.Insert(0, "YO! ");
-            Console.WriteLine(EmptyString);
-            systemString.Remove(0, 4);
-            Console.WriteLine(EmptyString);
-            int length = systemString.Lenght();
-            Console.WriteLine(length);
+            //SystemString systemString = new SystemString();
+            //EmptyString = "This is a string";
+            //systemString.ToString();
+            //Console.WriteLine(EmptyString);
+            //systemString.Insert(0, "YO! ");
+            //Console.WriteLine(EmptyString);
+            //systemString.Remove(0, 4);
+            //Console.WriteLine(EmptyString);
+            //int length = systemString.Lenght();
+            //Console.WriteLine(length);
 
-            SystemArrayString systemArrayString = new SystemArrayString();
-            CharArray = new char[6] {'S', 't', 'r', 'i', 'n', 'g'};
-            foreach (char s in CharArray)
-            {
-                Console.WriteLine(s);
-            }
-            string str = systemArrayString.ToString();
-            Console.WriteLine(str);
+            //SystemArrayString systemArrayString = new SystemArrayString();
+            //CharArray = new char[6] {'S', 't', 'r', 'i', 'n', 'g'};
+            //foreach (char s in CharArray)
+            //{
+            //    Console.WriteLine(s);
+            //}
+            //string str = systemArrayString.ToString();
+            //Console.WriteLine(str);
 
-            systemArrayString.Insert(5, "zzzz");
-            foreach (char s in CharArray)
-            {
-                Console.Write(s);
-            }
-            Console.WriteLine();
-            systemArrayString.Remove2(2,1);
-            foreach (char s in CharArray)
-            {
-                Console.Write(s);
-            }
-            Console.WriteLine();
+            //systemArrayString.Insert(5, "zzzz");
+            //foreach (char s in CharArray)
+            //{
+            //    Console.Write(s);
+            //}
+            //Console.WriteLine();
+            //systemArrayString.Remove2(2,1);
+            //foreach (char s in CharArray)
+            //{
+            //    Console.Write(s);
+            //}
+            //Console.WriteLine();
 
+            //SystemLinkedListString linkedList = new SystemLinkedListString();
+            //linkedList.CreateLinkedList();
+            //linkedList.DisplayList();
+            //linkedList.Insert(3,"z");
+            //linkedList.DisplayList();
+            //linkedList.RemoveNodeByValue('z');
+            //linkedList.DisplayList();
+            //linkedList.Remove(1,3);
+            //linkedList.DisplayList();
 
-
+            Sweepstakes sweepstakes = new Sweepstakes("name");
+            sweepstakes.DisplaySweepStakesMenu();
 
 
 

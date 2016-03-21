@@ -1,6 +1,7 @@
 ﻿using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -113,10 +114,10 @@ namespace SweepstakesManagement
             {
                 return;
             }
-            for (i = 1; i < numberOfNodes; i++)
+            for (i = 1; i <= numberOfNodes; i++)
             {
                 Console.WriteLine("Enter the element to be inserted: ");
-                data = Convert.ToChar(Console.ReadKey());
+                data = Convert.ToChar(Console.ReadLine());
                 InsertAtEnd(data);
             }
         }
@@ -199,7 +200,7 @@ namespace SweepstakesManagement
             }
             if (node == null)
             {
-                Console.WriteLine($"You can insert only upto {i}th position");
+                Console.WriteLine($"You can insert only up to {i}th position");
             }
             else
             {
@@ -213,6 +214,7 @@ namespace SweepstakesManagement
         {
             if (start == null)
             {
+                Console.WriteLine("Linked List is empty\n");
                 return;
             }
             start = start.nextNode;
@@ -222,6 +224,7 @@ namespace SweepstakesManagement
         {
             if (start == null)
             {
+                Console.WriteLine("Linked List is empty\n");
                 return;
             }
             if (start.nextNode == null)
@@ -237,14 +240,14 @@ namespace SweepstakesManagement
             node.nextNode = null;
         }
 
-        public void Remove(int startIndex, int numCharsToRemove)
+        public void RemoveNodeByValue(char charToRemove)
         {
             if (start == null)
             {
                 Console.WriteLine("Linked List is empty\n");
                 return;
             }
-            if (start.data == startIndex)
+            if (start.data == charToRemove)
             {
                 start = start.nextNode;
                 return;
@@ -252,11 +255,44 @@ namespace SweepstakesManagement
             Node node = start;
             while (node.nextNode != null)
             {
-                if (node.nextNode.data == startIndex)
+                if (node.nextNode.data == charToRemove)
                 {
                     break;
                 }
                 node = node.nextNode;
+            }
+            if (node.nextNode == null)
+            {
+                Console.WriteLine($"Element {charToRemove} is not in the linked list");
+            }
+            else
+            {
+                node.nextNode = node.nextNode.nextNode;
+            }
+        }
+
+        public void Remove(int startIndex, int numCharsToRemove)
+        {
+            if (start == null)
+            {
+                Console.WriteLine("Linked List is empty\n");
+                return;
+            }
+            Node node = start;
+            if (startIndex == 1)
+            {
+                for (int i = 0; i < numCharsToRemove && node != null; i++)
+                {
+                    start = node.nextNode;
+                    node.nextNode = node.nextNode.nextNode;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < numCharsToRemove && node != null; i++)
+                {
+                    node.nextNode = node.nextNode.nextNode;
+                }
             }
         }
 

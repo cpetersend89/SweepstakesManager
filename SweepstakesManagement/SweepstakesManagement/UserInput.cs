@@ -6,26 +6,24 @@ using System.Threading.Tasks;
 
 namespace SweepstakesManagement
 {
-    class UserInput
+    public class UserInput
     {
         public UserInput()
         {
             
         }
 
-        public string CollectUserName()
+        public static string CollectUserName()
         {
-            string name;
             Console.WriteLine("Please enter your name:");
-            name = Console.ReadLine();
+            string name = Console.ReadLine();
             return name;
         }
 
-        public string CollectUserPhoneNumber()
+        public static string CollectUserPhoneNumber()
         {
-            string phonenumber;
             Console.WriteLine("Please enter your phone number 'XXX-XXX-XXXX':");
-            phonenumber = Console.ReadLine();
+            string phonenumber = Console.ReadLine();
             return phonenumber;
         }
     }
